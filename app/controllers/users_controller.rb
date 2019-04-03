@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :color, only: [:show, :pdf_generate]
 
   def index
-    @users = User.all.where.not(role: 'admin').order(name: :asc).paginate(page: params[:page], per_page: 2)
+    @users = User.all.where.not(role: 'admin').order(name: :asc).paginate(page: params[:page], per_page: 10)
   end
 
   def new
