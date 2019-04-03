@@ -1,0 +1,27 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.themebtn{
+  color: #fff;
+  background-color: #1a295e;
+  border: none;
+}
+.themebtn:hover, .themebtn:focus{
+  color: #fff !important;
+}
+.minicolors-theme-default .minicolors-input{
+  height: 27px !important;
+}
+.fa:hover, .fa:focus, .social-info a:hover, .social-info a:focus{
+  color: #181a1b !important;
+}
+.pagination li{
+  font-size: 14px !important;
+  font-weight: 200 !important;
+}
+.pagination>.active>a, .pagination>.active>span,
+.pagination>.active>a:hover, .pagination>.active>span:hover,
+.pagination>.active>a:focus, .pagination>.active>span:focus{
+  background-color: #1a295e !important;
+  border-color: #1a295e !important;
+}

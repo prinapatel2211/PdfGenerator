@@ -1,0 +1,76 @@
+<section class='profile-info header' style='height:500px;'>
+  <div class='row'>
+    <div class='col-sm-3'>
+      <%= form_for @user, url: change_theme_color_path(id: @user) do |f| %>
+        <div class='form-group'>
+          <%= f.label :theme_color %>
+          <%= f.text_field :color_code, class: 'form-control color-field', id: 'color-picker', value: @color %>
+          <%= f.submit 'Apply', class: 'btn themebtn applybtn disabled' %>
+        </div>
+      <% end %>
+    </div>
+    <div class='col-sm-9'>
+      <%= link_to 'Download PDF', user_pdf_generate_path(@user, format: 'pdf'),
+          attachment: 'inline', class: 'btn themebtn pdfbtn pull-right' %>
+    </div>
+  </div>
+  <div class='left'>
+    <h1 style="color: <%= @color %>"><%= @user.company_name %></h1>
+    <% if @user.logo.attached? %>
+      <%= image_tag @user.logo, height: '200' %>
+    <% end %>
+  </div>
+  <div class='right'>
+    <h3 style="color: <%= @color %>"><%= @user.name %>
+      <span style="color: <%= @color %>">(<%= @user.role %>)</span>
+    </h3>
+    <ul>
+      <% if @user.descriptions.present? %>
+        <% @user.descriptions.each do |description| %>
+          <li style="color: <%= @color %>"><%= description.feature %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</section>
+<section class='social-info section network' style='background: <%= @color %>'>
+  <div>
+    <% if @user.linkedin_url.present? %>
+      <%= link_to @user.linkedin_url do %>
+        <i class='fa fa-linkedin'></i>
+      <% end %>
+    <% end %>
+    <% if @user.twitter_url.present? %>
+      <%= link_to @user.twitter_url do %>
+        <i class='fa fa-twitter'></i>
+      <% end %>
+    <% end %>
+    <% if @user.facebook_url.present? %>
+      <%= link_to @user.facebook_url do %>
+        <i class='fa fa-facebook'></i>
+      <% end %>
+    <% end %>
+    <% if @user.website.present? %>
+      <%= link_to @user.website do %>
+        <i class='fa fa-globe'></i>
+      <% end %>
+    <% end %>
+    <% if @user.email.present? %>
+      <%= mail_to @user.email do %>
+        <i class='fa fa-envelope'></i>
+      <% end %>
+    <% end %>
+    <% if @user.message.present? %>
+      <%= link_to 'javascript:;' do %>
+        <i class='fa fa-comment'></i>
+      <% end %>
+    <% end %>
+  </div>
+</section>
+<section class='section address-info' style="height:400px;background: <%= @color %>">
+  <div style='text-align: center;margin-top: 23px;'>
+    <address><%= @user.address %></address>
+    <address><%= @user.contact_no %></address>
+    <address><%= @user.website %></address>
+  </div>
+</section>
