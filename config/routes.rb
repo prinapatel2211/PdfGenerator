@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   post 'users/create', to: 'users#create'
   get 'users/new', to: 'users#new'
   get 'users/:id/show', to: 'users#show', as: 'user_show'
+  get 'users/:id/setting', to: 'users#setting', as: 'user_setting'
   get 'users/:id/edit', to: 'users#edit', as: 'user_edit'
   patch 'users/update', to: 'users#update', as: 'user_update'
   delete 'users/:id/delete', to: 'users#destroy', as: 'user_destroy'

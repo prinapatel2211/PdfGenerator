@@ -31,10 +31,8 @@ $(document).on('turbolinks:load', function(){
       $('.social-info, .address-info').css('background', color);
       if(beforeColor == color){
         $('.pdfbtn').removeClass('disabled');
-        $('.applybtn').addClass('disabled');
       }else{
         $('.pdfbtn').addClass('disabled');
-        $('.applybtn').removeClass('disabled');
       }
     }
   });

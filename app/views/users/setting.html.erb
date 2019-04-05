@@ -1,5 +1,16 @@
 <section class='profile-info header' style='height:500px;'>
-  <% color = @color + " !important" %>
+  <div class='row no-print'>
+    <div class='col-sm-3'>
+      <%= form_for @user, url: change_theme_color_path(id: @user) do |f| %>
+        <div class='form-group'>
+          <%= f.label :theme_color %>
+          <%= f.text_field :color_code, class: 'form-control color-field', id: 'color-picker', value: @color %>
+          <%= f.submit 'Apply', class: 'btn themebtn disabled' %>
+        </div>
+      <% end %>
+    </div>
+    <% color = @color + " !important" %>
+  </div>
   <div class='left'>
     <h1 style="color: <%= color %>"><%= @user.company_name %></h1>
     <% if @user.logo.attached? %>

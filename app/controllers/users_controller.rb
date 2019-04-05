@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_user?, only: [:index, :new, :create, :edit, :update, :show, :pdf_generate]
-  before_action :user, only: [:edit, :show, :update, :destroy, :pdf_generate, :change_theme_color]
-  before_action :color, only: [:show, :pdf_generate]
+  before_action :admin_user?, only: [:index, :new, :create, :edit, :update, :show, :setting, :pdf_generate]
+  before_action :user, only: [:edit, :show, :setting, :update, :destroy, :pdf_generate, :change_theme_color]
+  before_action :color, only: [:show, :setting, :pdf_generate]
 
   def index
     @users = User.all.where.not(role: 'admin').order(name: :asc).paginate(page: params[:page], per_page: 10)
@@ -27,6 +27,8 @@ class UsersController < ApplicationController
   end
 
   def show; end
+
+  def setting; end
 
   def update
     if @user.update(user_params)
@@ -63,7 +65,7 @@ class UsersController < ApplicationController
 
   def change_theme_color
     if @user.update(color_code: params[:user][:color_code])
-      redirect_to user_show_path(@user)
+      redirect_to root_url
     else
     end
   end
