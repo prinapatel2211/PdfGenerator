@@ -1,7 +1,11 @@
 <section class='profile-info header' style='height:500px;'>
   <div class='row'>
-    <div class='col-sm-10 col-sm-offset-1'>
+    <div class='col-sm-12'>
       <h1>Create User</h1>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-sm-12'>
       <%= form_for @user, url: users_create_path(@user) do |f| %>
         <%= render 'form', f: f %>
       <% end %>

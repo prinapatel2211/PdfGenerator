@@ -21,7 +21,8 @@ $(function() {
 })
 $(document).on('turbolinks:load', function(){
   var path = document.location.pathname;
-  if(path.includes('users') && !path.includes('edit') && !path.includes('delete')){
+  if(path.includes('users') && !path.includes('edit') && !path.includes('delete')
+     && !path.includes('new') && !path.includes('show')){
     var beforeColor = $('input#color-picker').minicolors('rgbaString');
   }
   $('input#color-picker').minicolors({

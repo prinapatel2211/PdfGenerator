@@ -25,8 +25,8 @@
                 <td><%= user.name %></td>
                 <td><%= user.email %></td>
                 <td><%= link_to 'Edit', user_edit_path(user.id) %></td>
-                <td><%= link_to 'Show', user_show_path(user.id) %></td>
-                <td><%= link_to 'Setting', user_setting_path(user.id) %></td>
+                <td><%= link_to 'Show / Preview PDF', user_show_path(user.id) %></td>
+                <td><%= link_to 'PDF Theme Setting', user_setting_path(user.id) %></td>
                 <td><%= link_to 'Download PDF', user_pdf_generate_path(user, format: 'pdf'), attachment: 'inline' %></td>
                 <td><%= link_to 'Delete', user_destroy_path(user.id), method: :delete %></td>
               </tr>

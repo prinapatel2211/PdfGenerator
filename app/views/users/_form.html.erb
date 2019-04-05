@@ -1,57 +1,111 @@
-<div class='form-group'>
-  <%= f.label :name %>
-  <%= f.text_field :name, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :email %>
-  <%= f.text_field :email, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :address %>
-  <%= f.text_area :address, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :contact_no %>
-  <%= f.telephone_field :contact_no, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :company_name %>
-  <%= f.text_field :company_name, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :website %>
-  <%= f.text_field :website, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :avatar %>
-  <%= f.file_field :avatar, class: 'form-control-file' %>
-</div>
-<div class='form-group'>
-  <%= f.label :logo %>
-  <%= f.file_field :logo, class: 'form-control-file' %>
-</div>
-<div class='form-group'>
-  <%= f.label :linkedin_url %>
-  <%= f.text_field :linkedin_url, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :facebook_url %>
-  <%= f.text_field :facebook_url, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :twitter_url %>
-  <%= f.text_field :twitter_url, class: 'form-control' %>
-</div>
-<div class='form-group'>
-  <%= f.label :message %>
-  <%= f.text_area :message, class: 'form-control' %>
-</div>
-<div id='descriptions'>
-  <%= f.fields_for :descriptions do |description| %>
-    <%= render 'description_fields', f: description %>
-  <% end %>
-  <div class='links'>
-    <%= link_to_add_association 'Add Descriptions', f, :descriptions %>
+<div class='row'>
+  <div class='col-sm-12'>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+    </div>
   </div>
 </div>
-<%= f.submit 'Save', class: 'btn themebtn' %>
+<div class='row'>
+  <div class='col-sm-12'>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :address %>
+        <%= f.text_area :address, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :contact_no %>
+        <%= f.telephone_field :contact_no, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-sm-12'>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :company_name %>
+        <%= f.text_field :company_name, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :website %>
+        <%= f.text_field :website, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-sm-12'>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar, class: 'form-control-file' %>
+      </div>
+    </div>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :logo %>
+        <%= f.file_field :logo, class: 'form-control-file' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-sm-12'>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :linkedin_url %>
+        <%= f.text_field :linkedin_url, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :facebook_url %>
+        <%= f.text_field :facebook_url, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-sm-12'>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :twitter_url %>
+        <%= f.text_field :twitter_url, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='col-sm-6'>
+      <div class='form-group'>
+        <%= f.label :message %>
+        <%= f.text_area :message, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-sm-12' id='descriptions'>
+    <%= f.fields_for :descriptions do |description| %>
+      <%= render 'description_fields', f: description %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add Descriptions', f, :descriptions %>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-sm-12'>
+    <%= f.submit 'Save', class: 'btn themebtn' %>
+  </div>
+</div>
