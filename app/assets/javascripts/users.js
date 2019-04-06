@@ -31,9 +31,9 @@ $(document).on('turbolinks:load', function(){
       $('.header h1, .profile-info h3, h3 span, .header ul li').css('color', color);
       $('.social-info, .address-info').css('background', color);
       if(beforeColor == color){
-        $('.pdfbtn').removeClass('disabled');
+        $('.applybtn').addClass('disabled');
       }else{
-        $('.pdfbtn').addClass('disabled');
+        $('.applybtn').removeClass('disabled');
       }
     }
   });
