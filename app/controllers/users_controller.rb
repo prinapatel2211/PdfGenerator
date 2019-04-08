@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: 'show', layout: 'pdf', disposition: 'attachment'
+        render pdf: 'show', layout: 'pdf', disposition: 'attachment', margin: { top: 0, bottom: 0, left: 0, right: 0 }
       end
     end
   end
