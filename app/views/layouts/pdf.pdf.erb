@@ -3,8 +3,9 @@
   <head>
     <meta charset='utf-8' />
     <%= wicked_pdf_stylesheet_link_tag 'pdf', media: 'all' -%>
-    <%= wicked_pdf_stylesheet_link_tag 'application', media: 'all', "data-turbolinks-track" => 'reload' %>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf_layout', media: 'all', "data-turbolinks-track" => 'reload' %>
     <%= wicked_pdf_javascript_include_tag 'number_pages' %>
+    <%= stylesheet_link_tag "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", media: "all", "data-turbolinks-track" => true %>
   </head>
   <body onload='number_pages'>
     <%= yield %>
